@@ -1,0 +1,327 @@
+/** @format */
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Roboto:200,400,600&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+  scroll-behavior: smooth;
+  background-color: rgb(88, 88, 88);
+}
+
+.pulsating-circle {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  width: 30px;
+  height: 30px;
+}
+
+.pulsating-circle::before {
+  content: "";
+  position: relative;
+  display: block;
+  width: 300%;
+  height: 300%;
+  box-sizing: border-box;
+  margin-left: -100%;
+  margin-top: -100%;
+  border-radius: 45px;
+  background-color: #01a4e9;
+  animation: pulse-ring 1.25s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+}
+
+.pulsating-circle::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.767);
+  border-radius: 15px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+  animation: pulse-dot 1.25s cubic-bezier(0.455, 0.03, 0.515, 0.955) -0.4s infinite;
+}
+
+@keyframes pulse-ring {
+  0% {
+    transform: scale(0.33);
+  }
+  80%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes pulse-dot {
+  0% {
+    transform: scale(0.8);
+  }
+  50% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0.8);
+  }
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+  height: 100%;
+}
+
+.container {
+  display: block;
+  height: 100vh;
+  animation: fadeInAnimation 3s ease-in-out 3s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  opacity: 0;
+}
+
+@keyframes fadeInAnimation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.header {
+}
+
+.header-presentation,
+.sidebar {
+  display: none;
+}
+
+#social-linkedin-header {
+  display: inline-block;
+  vertical-align: middle;
+  width: 10%;
+}
+
+.header-name {
+  font-family: "Dancing Script", cursive;
+  font-size: 2rem;
+}
+
+.header-socials a {
+  display: inline-block;
+  text-align: center;
+}
+
+.header-roles {
+  font-family: "Anton", sans-serif;
+  margin: 0.5rem 0;
+}
+
+.main {
+  grid-column-start: 2;
+  width: 100%;
+  overflow: hidden;
+}
+
+@media (min-width: 55rem) {
+  .container {
+    display: grid;
+    grid-template-columns: 40% auto;
+  }
+
+  .header {
+    height: 100%;
+    width: 40%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    font-family: "Roboto", sans-serif;
+    display: grid;
+    grid-template-columns: 7rem auto;
+    background-color: rgb(88, 88, 88);
+  }
+
+  .header-presentation {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(88, 88, 88);
+    color: rgb(255, 255, 255);
+  }
+
+  .sidebar {
+    height: 100%;
+    background: #222;
+    display: block;
+  }
+
+  .sidebar-nav-items {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    list-style: none;
+    margin: 0;
+    padding: 2rem 0.5rem;
+    font-size: 0.8rem;
+  }
+
+  .sidebar-nav-item {
+    flex: 1 1 0px;
+    margin: 1rem 0.2rem;
+    border: 1px solid #fff;
+    border-radius: 1rem;
+    text-align: center;
+    color: #fff;
+  }
+
+  .sidebar-nav-item:hover,
+  .sidebar-nav-item:active {
+    background-color: aliceblue;
+    color: #222;
+    cursor: pointer;
+  }
+
+  .sidebar-nav-item a {
+    color: inherit;
+    text-decoration: none;
+    padding: 0.5rem 0rem;
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
+  .mobile-header {
+    display: none;
+  }
+}
+
+.mobile-header {
+  background-color: #fff;
+  box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, 0.1);
+  position: fixed;
+  width: 100%;
+  z-index: 3;
+}
+
+.mobile-header ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  overflow: hidden;
+  background-color: #fff;
+}
+
+.mobile-header li a {
+  display: block;
+  padding: 1rem;
+  border-right: 1px solid #f4f4f4;
+  text-decoration: none;
+  color: black;
+}
+
+.mobile-header li a:hover {
+  background-color: #f4f4f4;
+}
+
+.mobile-header .mobile-header-logo {
+  display: block;
+  float: left;
+  font-size: 1rem;
+  padding: 1.2rem;
+  text-decoration: none;
+  color: black;
+}
+
+.mobile-header .mobile-header-menu {
+  clear: both;
+  max-height: 0;
+  transition: max-height 0.2s ease-out;
+}
+
+.mobile-header .mobile-header-menu-icon {
+  cursor: pointer;
+  display: inline-block;
+  float: right;
+  padding: 28px 20px;
+  position: relative;
+  user-select: none;
+}
+
+.mobile-header .mobile-header-menu-icon .mobile-header-navicon {
+  background: #333;
+  display: block;
+  height: 2px;
+  position: relative;
+  transition: background 0.2s ease-out;
+  width: 18px;
+}
+
+.mobile-header .mobile-header-menu-icon .mobile-header-navicon:before,
+.mobile-header .mobile-header-menu-icon .mobile-header-navicon:after {
+  background: #333;
+  content: "";
+  display: block;
+  height: 100%;
+  position: absolute;
+  transition: all 0.2s ease-out;
+  width: 100%;
+}
+
+.mobile-header .mobile-header-menu-icon .mobile-header-navicon:before {
+  top: 5px;
+}
+
+.mobile-header .mobile-header-menu-icon .mobile-header-navicon:after {
+  top: -5px;
+}
+
+.mobile-header .mobile-header-menu-btn {
+  display: none;
+}
+
+.mobile-header .mobile-header-menu-btn:checked ~ .mobile-header-menu {
+  max-height: 80vh;
+}
+
+.mobile-header
+  .mobile-header-menu-btn:checked
+  ~ .mobile-header-menu-icon
+  .mobile-header-navicon {
+  background: transparent;
+}
+
+.mobile-header
+  .mobile-header-menu-btn:checked
+  ~ .mobile-header-menu-icon
+  .mobile-header-navicon:before {
+  transform: rotate(-45deg);
+}
+
+.mobile-header
+  .mobile-header-menu-btn:checked
+  ~ .mobile-header-menu-icon
+  .mobile-header-navicon:after {
+  transform: rotate(45deg);
+}
+
+.mobile-header
+  .mobile-header-menu-btn:checked
+  ~ .mobile-header-menu-icon:not(.steps)
+  .mobile-header-navicon:before,
+.mobile-header
+  .mobile-header-menu-btn:checked
+  ~ .mobile-header-menu-icon:not(.steps)
+  .mobile-header-navicon:after {
+  top: 0;
+}

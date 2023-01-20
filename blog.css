@@ -1,0 +1,22 @@
+/** @format */
+
+#blog {
+  height: 100vh;
+  background-color: rgb(187, 187, 187);
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.blog-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.blog-container p {
+  color: black;
+  font-size: 3rem;
+  font-weight: 700;
+  text-align: center;
+}

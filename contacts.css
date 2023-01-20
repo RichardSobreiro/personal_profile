@@ -1,0 +1,94 @@
+/** @format */
+
+#contacts {
+  height: 100vh;
+  background-color: black;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  color: white;
+}
+
+.contacts-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex: 1 1 0;
+}
+
+.contacts-container-title {
+  margin-top: 5rem;
+}
+
+.contacts-info {
+  padding: 0 1rem;
+}
+
+.contacts-info-text {
+  font-size: 1rem;
+}
+
+.contacts-info-type {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #628bff;
+}
+
+.send-message-form {
+  display: none;
+}
+
+.send-message-form label {
+  display: block;
+  margin: 0.3rem;
+  font-size: 1.2rem 0;
+  font-weight: 700;
+  color: #628bff;
+  margin-top: 1rem;
+  width: 100%;
+}
+
+.send-message-form button {
+  display: block;
+  margin: 1rem 0;
+  border: 5px solid blue;
+  border-radius: 10px;
+  padding: 0.2rem 0.5rem;
+  float: right;
+}
+
+.send-message-form button:hover {
+  background-color: #a6f0ba;
+  color: black;
+  border: 7px solid blue;
+}
+
+.send-message-form input {
+  display: block;
+  margin-top: 1rem;
+  width: 100%;
+}
+
+.send-message-form textarea {
+  display: block;
+  margin-top: 1rem;
+}
+
+.send-message-form input:not([type="checkbox"]),
+.send-message-form select {
+  border: 1px solid #ccc;
+  padding: 0.2rem 0.5rem;
+  font: inherit;
+  border-radius: 10px;
+}
+
+.send-message-form input:focus,
+.send-message-form select:focus {
+  outline: none;
+  background: #d8f3df;
+  border-color: #2ddf5c;
+}
+
+@media (min-width: 55rem) {
+}

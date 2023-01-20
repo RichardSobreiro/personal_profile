@@ -1,0 +1,125 @@
+/** @format */
+
+#resume {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  justify-items: center;
+  background-color: rgb(187, 187, 187);
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.resume-title {
+  font-size: 2rem;
+  font-weight: bold;
+  font-family: "Roboto", sans-serif;
+  margin-top: 1rem;
+  text-align: center;
+  text-decoration: underline;
+}
+
+.history-tl-container {
+  font-family: "Roboto", sans-serif;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  padding: 2rem 10rem 2rem 20rem;
+}
+
+.history-tl-container ul.tl {
+  margin: 0;
+  padding: 0;
+}
+
+.history-tl-container ul.tl li {
+  list-style: none;
+  border-left: 1px dashed #86d6ff;
+  padding: 0 0 0 30px;
+  position: relative;
+}
+
+.history-tl-container ul.tl li:last-child {
+  border-left: 0;
+}
+.history-tl-container ul.tl li::before {
+  position: absolute;
+  left: -18px;
+  top: -5px;
+  content: " ";
+  border: 8px solid rgba(255, 255, 255, 0.74);
+  border-radius: 500%;
+  background: #258cc7;
+  height: 20px;
+  width: 20px;
+  transition: all 500ms ease-in-out;
+}
+.history-tl-container ul.tl li:hover::before {
+  border-color: #258cc7;
+  transition: all 1000ms ease-in-out;
+}
+ul.tl li .item-title {
+  font-size: 1.2rem;
+  line-height: 1.2rem;
+  font-weight: bold;
+}
+
+ul.tl li .item-title-location {
+  font-size: 0.7rem;
+}
+ul.tl li .item-detail {
+  color: rgba(0, 0, 0, 0.8);
+  font-size: 1rem;
+  margin: 0.8rem 0;
+}
+
+ul.tl li .timestamp {
+  position: absolute;
+  left: -10rem;
+  text-align: left;
+  font-size: 0.9rem;
+}
+
+.certifications-area {
+  padding: 3rem 0;
+}
+
+.certifications {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.certification {
+  margin: 1rem 2rem;
+  text-align: center;
+}
+
+.certification-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+.certification-institution {
+  font-size: 0.8rem;
+  font-style: italic;
+  margin: 0;
+}
+
+.certification-dates {
+  font-size: 0.8rem;
+  font-style: italic;
+  margin: 0;
+}
+
+@media (min-width: 55rem) {
+  .certifications {
+    padding: 1rem 5rem;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-gap: 1rem;
+  }
+}
