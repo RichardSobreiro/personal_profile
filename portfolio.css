@@ -41,7 +41,8 @@
 }
 
 /* Hide the images by default */
-.slide {
+.slide,
+.slide2 {
   display: none;
   text-align: center;
 }
